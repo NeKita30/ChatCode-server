@@ -1,0 +1,27 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users_pass (
+    id INT PRIMARY KEY,
+    pass_hash BINARY(32) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    author_id INT,
+    chat_id INT,
+    text VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS chat_names (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS chats (
+    id INT,
+    member_id INT
+);
+
